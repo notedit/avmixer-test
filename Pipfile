@@ -11,8 +11,9 @@ name = "pypi"
 
 [packages]
 
-av = "*"
 pillow = "*"
+cython = "*"
+opencv-python = "*"
 
 
 [requires]
