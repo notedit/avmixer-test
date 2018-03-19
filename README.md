@@ -1,7 +1,7 @@
 # avmixer
-音视频合流 
+
+audio/video  mixer 
 
 
-## 基于ffmpeg开发
 
 
