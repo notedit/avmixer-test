@@ -17,9 +17,12 @@ graph = av.filter.Graph()
 
 fchain = []
 fchain.append(graph.add('abuffer',args))
+fchain.append(graph.add('volume','volume=0.5'))
+fchain[-2].link_to(fchain[-1])
 fchain.append(graph.add('abuffersink'))
 fchain[-2].link_to(fchain[-1])
 
+graph.configure()
 
 iframe = AudioFrame('s16', 'stereo', 2048)
 iframe.sample_rate = 44100
@@ -28,5 +31,6 @@ iframe.time_base = '1/44100'
 
 fchain[0].push(iframe)
 
+oframe = fchain[-1].pull()
 
 
